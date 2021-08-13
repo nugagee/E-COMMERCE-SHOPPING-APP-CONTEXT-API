@@ -48,7 +48,7 @@ export default class Cart extends Component {
                     <div className="cart">
                         <ul className="cart-items">
                             {cartItems.map(item => (
-                                <li key={item._id}>
+                                <li key={item._id} className="cart-item">
                                     <div>
                                         <img src={item.image} alt={item.title} />
                                     </div>
@@ -89,7 +89,7 @@ export default class Cart extends Component {
                             {/* FIRST CHECK IF SHOWCHECKOUT IS TRUE */}
                             {this.state.showCheckout && (
                                 <div className="cart">
-                                    <form onSubmit={this.createOrder}>
+                                    <form onSubmit={this.createOrder} className="cart-form">
                                         <ul className="form-container">
                                             <li>
                                                 <label>Email</label>

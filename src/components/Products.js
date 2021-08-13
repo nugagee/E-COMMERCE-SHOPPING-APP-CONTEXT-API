@@ -52,7 +52,9 @@ export default class Products extends Component {
 									<Modal 
 										isOpen={true} 
 										onRequestClose={this.closeModal}>
+                                            <div className="modal">
 												<button
+                                                    className="close-modal"
 													onClick={this.closeModal}>
 														x
 													</button>
@@ -88,6 +90,7 @@ export default class Products extends Component {
 																</div>
 															</div>
 													</div>
+                                                </div>
 									</Modal>
 								)}
             </div>
