@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   createOrder = (order) => {
-    alert("Welcome");
+    alert("Welcome, Your Order Has Been Placed! Await For Confirmation. Thanks.");
   }
 
   // FUNCTION THAT REMOVE ITEMS FROM CART
@@ -115,33 +115,43 @@ class App extends React.Component {
     return (
       <div className="grid-container">
         <header>
-          <a href="/">theTechBoi.nugagee Online Shopping Cart</a>
+          <div className="header container">
+              <div className="logo">
+                <a href="/"><h2>theTechBoi.<span style={{color:"red"}}><i>nugagee</i></span></h2></a>
+              </div>
+              <p>Your No.1 Online Shopping App</p>
+          </div>
         </header>
         <main>
-          <div className="content">
-            <div className="main">
-              <Filter 
-              count={this.state.products.length}
-              size={this.state.size}
-              sort={this.state.sort}
-              filterProducts={this.filterProducts}
-              sortProducts={this.sortProducts}/>
-              <Products 
-              products={this.state.products}
-              addToCart={this.addToCart}/>
-            </div>
-            <div className="sidebar">
-              <Cart 
-              cartItems={this.state.cartItems}
-              removeFromCart={this.removeFromCart}
-              createOrder={this.createOrder}
-              />
+          <div className="container">
+            <div className="content">
+              <div className="main">
+                <Filter 
+                count={this.state.products.length}
+                size={this.state.size}
+                sort={this.state.sort}
+                filterProducts={this.filterProducts}
+                sortProducts={this.sortProducts}/>
+                <Products 
+                products={this.state.products}
+                addToCart={this.addToCart}/>
+              </div>
+              <div className="sidebar">
+                <Cart 
+                cartItems={this.state.cartItems}
+                removeFromCart={this.removeFromCart}
+                createOrder={this.createOrder}
+                />
+              </div>
             </div>
           </div>
         </main>
         <footer>
-          theTechBoi.nugagee &copy; 2021 All right reserved.
+        <div className="container">
+          theTechBoi.<span style={{color:"red"}}><i>nugagee </i></span>  &copy; 2021 All right reserved.
+          </div>
         </footer>
+        <a href="#logo" className="top">V</a>
       </div>
     );
   }

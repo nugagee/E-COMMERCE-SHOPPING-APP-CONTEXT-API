@@ -39,9 +39,12 @@ export default class Cart extends Component {
                 {/* CHECKING IF CART IS EMPTY */}
                 {cartItems.length === 0 ? (
                     <div className="cart cart-header">Cart is empty</div>
-                ) : (
+                ) : cartItems.length === 1 ? 
+                    (<div className="cart cart-header">
+                        You have 1 item in the cart {" "}
+                    </div>) : (
                     <div className="cart cart-header">
-                        You have {cartItems.length} in the cart {" "}
+                        You have {cartItems.length} items in the cart {" "}
                     </div>
                 )}
                 <div>
@@ -52,8 +55,8 @@ export default class Cart extends Component {
                                     <div>
                                         <img src={item.image} alt={item.title} />
                                     </div>
-                                    <div>
-                                        <div>{item.title}</div>
+                                    <div className="title">
+                                        <p>{item.title}</p>
                                         <div className="right">
                                             {formatCurrency(item.price)} x {item.count}{" "}
                                             <button 
